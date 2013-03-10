@@ -14,8 +14,8 @@ a {
 
 table {
     border-collapse: collapse;
-    padding: 10px;
-    margin: -10px;
+    margin: 10px -10px;
+    border-bottom: solid 1px #555;
 }
 
 td, th {
@@ -35,10 +35,14 @@ td, th {
     margin: -20px -20px 20px -20px;
 }
 
-a.brand { font-weight: bold; }
+a.brand { font-weight: bold; font-size: 1.1rem; }
 
 h1 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 200;
     margin: 0 0 20px 0;
+}
+
+p.username {
+    color: #555;
 }

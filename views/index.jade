@@ -2,10 +2,12 @@ extends layout
 
 block content
     h1
-        -date = new Date(date)
+        -date = new Date(credits.date)
         =date.toLocaleDateString() +" om "+ date.toLocaleTimeString()
     table
-        each row in data
+        each row in credits.data
             tr
                 td #{row.label}
                 td #{row.value}
+
+    p.username Overzicht voor #{username}

@@ -1,7 +1,12 @@
 var fs = require('fs');
 
-var cache_file = 'var/simpel_data.json',
-	cache_time = (30 * 60); // 30 minutes
+var cache_file = 'var/simpel_data.json';
+
+
+exports.getCredentials = function() {
+    return JSON.parse(fs.readFileSync('var/credentials.json'));
+};
+
 
 exports.getCredits = function(callback) {
 	function returnData() {
@@ -10,15 +15,7 @@ exports.getCredits = function(callback) {
 	}
 
 	// cache file does not exists
-	var exists = fs.existsSync(cache_file);
-    var time_in_cache = 0;
-
-    if(exists) {
-		var stats = fs.statSync(cache_file);
-		time_in_cache = Math.round((new Date() - stats.mtime) / 1000);
-    }
-
-	if(!exists || time_in_cache > cache_time) {
+	if(!fs.existsSync(cache_file)) {
 		exports.refreshCredits(function() {
 			returnData();
 		});
@@ -58,6 +55,7 @@ exports.refreshCredits = function(callback) {
 
 exports.authenticate = function(username, password) {
     // get the sign in credentials
-    var credentials = JSON.parse(fs.readFileSync('var/credentials.json'));
-    return (username == credentials.username && password == credentials.password);
+    var credentials = exports.getCredentials();
+    return (username === credentials.username &&
+            password === credentials.password);
 };

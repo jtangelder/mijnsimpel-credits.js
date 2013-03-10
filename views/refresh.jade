@@ -1,10 +1,4 @@
 extends layout
 
 block content
-    if error
-        .alert.error
-            | Something went wrong...
-            =error
-    else
-        .alert.success
-            | Success!
+    =error

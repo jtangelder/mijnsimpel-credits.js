@@ -26,7 +26,10 @@ app.configure(function () {
 // show credits
 app.get("/", function(req, res) {
     var data = credits.getCredits(function(data) {
-        res.render('index', data);
+        res.render('index', {
+            username: credits.getCredentials().username,
+            credits: data
+        });
     });
 });
 
@@ -34,7 +37,11 @@ app.get("/", function(req, res) {
 // refresh credits
 app.get('/refresh', function(req, res) {
     credits.refreshCredits(function(data) {
-        res.render('refresh', data);
+        if(data.error) {
+            res.render('refresh', data);
+        } else {
+            res.redirect("/");
+        }
     });
 });
 
