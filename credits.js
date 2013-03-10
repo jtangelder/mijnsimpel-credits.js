@@ -54,3 +54,10 @@ exports.refreshCredits = function(callback) {
 			}
 		});
 };
+
+
+exports.authenticate = function(username, password) {
+    // get the sign in credentials
+    var credentials = JSON.parse(fs.readFileSync('var/credentials.json'));
+    return (username == credentials.username && password == credentials.password);
+};

@@ -4,7 +4,7 @@ var casper = require('casper').create(),
 var source_url = 'https://www.mijnsimpel.nl/login.aspx?ReturnUrl=Credit.aspx',
     credits = [];
     // get the sign in credentials
-    credentials = JSON.parse(fs.read('scripts/credentials.json'));
+    credentials = JSON.parse(fs.read('var/credentials.json'));
 
 
 casper.start(source_url, function() {
