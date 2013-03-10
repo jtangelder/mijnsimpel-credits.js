@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    if error
+        div.alert.alert-error
+            | Something went wrong...
+            =error
+    else
+        div.alert.alert-success
+            | Success!

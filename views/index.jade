@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h5 Last fetched @
+        -date = new Date(date)
+        =date.toLocaleDateString() +" at "+ date.toLocaleTimeString()
+    table.table.table-striped.table-bordered
+        each row in data
+            tr
+                td #{row.label}
+                td #{row.value}
