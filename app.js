@@ -15,7 +15,7 @@ app.configure(function () {
 	app.set('view engine', 'jade');
 
     app.use(express.compress());
-    app.use(express.static(__dirname + '/public'));
+    app.use(express.static(__dirname + '/static'));
     app.use(express.errorHandler());
     app.use(express.basicAuth(credits.authenticate));
     app.use(app.router);
