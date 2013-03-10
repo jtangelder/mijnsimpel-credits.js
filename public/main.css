@@ -1,6 +1,6 @@
 body {
     background: #000;
-    font: 1rem Roboto, HelveticaNeue, Arial, sans-serif;
+    font: .9rem Roboto, HelveticaNeue, Arial, sans-serif;
     color: #fff;
     margin: 20px;
 }
@@ -14,12 +14,15 @@ a {
 
 table {
     border-collapse: collapse;
+    width: 100%;
+    padding: 10px;
     margin: -10px;
 }
 
 td, th {
+    vertical-align: top;
     padding: 10px;
-    border-bottom: solid 1px #555;
+    border-top: solid 1px #555;
 }
 
 .alert.error { color: #f00; }
