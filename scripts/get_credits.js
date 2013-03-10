@@ -2,24 +2,24 @@ var casper = require('casper').create(),
     fs = require('fs');
 
 var source_url = 'https://www.mijnsimpel.nl/login.aspx?ReturnUrl=Credit.aspx',
-    credits = [];
+    credits = [],
     // get the sign in credentials
     credentials = JSON.parse(fs.read('var/credentials.json'));
 
 
-casper.start(source_url, function() {
+casper.start(source_url, function () {
     // sign in
-	this.fill('form', {
-		'ctl00$content$txtLoginName': credentials.username,
-		'ctl00$content$txtPassword': credentials.password
-	});
+    this.fill('form', {
+        'ctl00$content$txtLoginName': credentials.username,
+        'ctl00$content$txtPassword': credentials.password
+    });
 
-	this.click('#ctl00_content_lbSubmit');
+    this.click('#ctl00_content_lbSubmit');
 });
 
 
-casper.then(function() {
-    credits = this.evaluate(function() {
+casper.then(function () {
+    credits = this.evaluate(function () {
         // simple formatting
         function formatLabel(label) {
             return label.replace("nog te gebruiken", "Resterende");
@@ -34,7 +34,7 @@ casper.then(function() {
             table = document.querySelector("#content table"),
             row, r;
 
-        for(r=0; r<table.rows.length; r++) {
+        for (r = 0; r < table.rows.length; r++) {
             row = table.rows[r];
             data.push({
                 label: formatLabel(row.cells[0].innerText),
@@ -42,13 +42,13 @@ casper.then(function() {
             });
         }
 
-		return data;
-	});
+        return data;
+    });
 });
 
 
-casper.run(function() {
+casper.run(function () {
     // print the credits
-	this.echo(JSON.stringify(credits));
-	this.exit();
+    this.echo(JSON.stringify(credits));
+    this.exit();
 });

@@ -5,7 +5,9 @@ body {
     margin: 20px;
 }
 
-.right { float: right; }
+.right {
+    float: right;
+}
 
 a {
     color: #33b5e5;
@@ -24,18 +26,26 @@ td, th {
     border-top: solid 1px #555;
 }
 
-.alert.error { color: #f00; }
-.alert.success { color: #0c0; }
+.alert.error {
+    color: #f00;
+}
+
+.alert.success {
+    color: #0c0;
+}
 
 .navbar {
     background: #000;
-    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0,rgba(0,0,0,0)),color-stop(1,rgba(255,255,255,0.2)));
-    background-image: linear-gradient(top,rgba(0,0,0,0),rgba(255,255,255,0.2));
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(0, 0, 0, 0)), color-stop(1, rgba(255, 255, 255, 0.2)));
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.2));
     padding: 20px;
     margin: -20px -20px 20px -20px;
 }
 
-a.brand { font-weight: bold; font-size: 1.1rem; }
+a.brand {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 
 h1 {
     font-size: 1.1rem;

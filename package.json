@@ -1,13 +1,13 @@
 {
-	"name": "simpel-credit.js",
-	"version": "0.0.1",
-	"author": "J. Tangelder <j.tangelder@gmail.com>",
-	"description": "Get Simpel.nl credits",
+    "name": "simpel-credit.js",
+    "version": "0.0.1",
+    "author": "J. Tangelder <j.tangelder@gmail.com>",
+    "description": "Get Simpel.nl credits",
 
-	"dependencies": {
+    "dependencies": {
         "jade": "*",
         "express": "3.1",
-	    "underscore": "1.4",
+        "underscore": "1.4",
         "supervisor": "*"
     }
 }
