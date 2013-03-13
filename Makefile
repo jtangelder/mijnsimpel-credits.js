@@ -3,5 +3,5 @@ start:
 	forever start -l forever.log -e err.log app.js
 
 stop:
-    @echo "Stopping server..."
-    forever stop app.js
+	@echo "Stopping server..."
+	forever stop app.js
