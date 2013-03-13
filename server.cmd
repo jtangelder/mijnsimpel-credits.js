@@ -1,1 +1,0 @@
-supervisor -w . -i static -x node app.js
